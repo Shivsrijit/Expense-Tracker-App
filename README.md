@@ -5,13 +5,13 @@ This project is designed to help users track their expenses on a daily, monthly,
 
 Submission for CIA-2 for Object Oriented Programming, Semester 3, 2023-27 batch.
 
-Team Members
+## Team Members
 Somasekhara S - 23011101124
 Shivsrijit Verma - 23011101134
 Sanjeev Krishna - 23011101125
 
 
-Tech Stack
+## Tech Stack
 Java
 Spring framework
 Spring Boot
