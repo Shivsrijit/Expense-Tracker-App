@@ -1,51 +1,257 @@
-/* src/main/resources/static/styles.css */
-.root {
-    -fx-background-color: #f5f5f5;
-    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+/* Modern Expense Tracker Styles */
+
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    min-height: 100vh;
 }
 
-.balance-card {
-    -fx-background-color: #4CAF50;
-    -fx-background-radius: 5px;
-    -fx-padding: 20px;
-    -fx-min-width: 250px;
+.container {
+    max-width: 1200px;
+    padding: 20px;
 }
 
-.category-card {
-    -fx-background-radius: 5px;
-    -fx-padding: 15px;
-    -fx-min-width: 150px;
+/* Header Styles */
+header h1 {
+    color: #2c3e50;
+    font-weight: 600;
 }
 
-.label-header {
-    -fx-text-fill: white;
-    -fx-font-size: 16px;
+.lead {
+    font-size: 1.1rem;
+    color: #6c757d;
 }
 
-.balance-amount {
-    -fx-text-fill: white;
-    -fx-font-size: 24px;
-    -fx-font-weight: bold;
+/* Summary Cards */
+.summary-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.category-label {
-    -fx-font-size: 14px;
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.category-amount {
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
+.summary-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
 }
 
-.add-expense-form {
-    -fx-background-color: white;
-    -fx-padding: 20px;
-    -fx-background-radius: 5px;
+.summary-icon i {
+    font-size: 1.5rem;
+    color: white;
 }
 
-.submit-button {
-    -fx-background-color: #FF5722;
-    -fx-text-fill: white;
-    -fx-padding: 10px 20px;
-    -fx-background-radius: 3px;
+.total-card .summary-icon {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.category-card .summary-icon {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+}
+
+.recent-card .summary-icon {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+}
+
+.summary-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+}
+
+.summary-info .amount {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #2c3e50;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2rem;
+}
+
+.card-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+.form-floating > .form-control,
+.form-floating > .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    height: calc(3.5rem + 2px);
+    line-height: 1.25;
+}
+
+.form-floating > .form-control:focus,
+.form-floating > .form-select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+}
+
+.form-floating > label {
+    padding: 1rem 0.75rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #45a049, #3d8b40);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+/* Table Styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    color: #6c757d;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 1rem 0.75rem;
+    color: #2c3e50;
+}
+
+/* Category Badges */
+.category-badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.category-food {
+    background-color: #e3f2fd;
+    color: #1976D2;
+}
+
+.category-transport {
+    background-color: #f3e5f5;
+    color: #7B1FA2;
+}
+
+.category-entertainment {
+    background-color: #e8f5e9;
+    color: #388E3C;
+}
+
+.category-bills {
+    background-color: #fff3e0;
+    color: #F57C00;
+}
+
+.category-other {
+    background-color: #f5f5f5;
+    color: #616161;
+}
+
+/* Delete Button */
+.delete-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Amount Display */
+.amount {
+    font-family: 'Poppins', monospace;
+    font-weight: 600;
+}
+
+/* Empty State */
+.text-center.py-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.text-center.py-5 i {
+    color: #dee2e6;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .summary-card {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .table-responsive {
+        border-radius: 15px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
 }
