@@ -1,0 +1,46 @@
+<!-- src/main/resources/templates/expense-tracker.fxml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="java_project.Expensetracker.controller.ExpenseTrackerController"
+      spacing="20" styleClass="root">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <HBox spacing="20" alignment="CENTER">
+        <VBox styleClass="balance-card">
+            <Label text="Balance" styleClass="label-header"/>
+            <Label fx:id="balanceLabel" styleClass="balance-amount"/>
+        </VBox>
+        
+        <VBox styleClass="category-card">
+            <Label text="Shopping" styleClass="category-label"/>
+            <Label fx:id="shoppingTotal" styleClass="category-amount"/>
+        </VBox>
+        
+        <!-- Add more category cards here -->
+    </HBox>
+    
+    <TableView fx:id="expenseTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Purpose" fx:id="purposeColumn"/>
+            <TableColumn text="Category" fx:id="categoryColumn"/>
+            <TableColumn text="Amount" fx:id="amountColumn"/>
+            <TableColumn text="Date" fx:id="dateColumn"/>
+        </columns>
+    </TableView>
+    
+    <VBox spacing="10" styleClass="add-expense-form">
+        <Label text="Add Expenditure" styleClass="form-header"/>
+        <TextField fx:id="purposeField" promptText="Purpose"/>
+        <TextField fx:id="amountField" promptText="Amount"/>
+        <DatePicker fx:id="datePicker"/>
+        <ComboBox fx:id="categoryComboBox" promptText="Select Category"/>
+        <Button text="Submit" onAction="#handleAddExpense" styleClass="submit-button"/>
+    </VBox>
+</VBox>
