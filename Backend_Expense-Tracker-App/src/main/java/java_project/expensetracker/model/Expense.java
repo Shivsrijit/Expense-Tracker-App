@@ -1,3 +1,4 @@
+//Sanjeev Krishna
 package java_project.expensetracker.model;
 
 import jakarta.persistence.*;
@@ -34,13 +35,13 @@ public class Expense {
     @JoinColumn(name = "user_id")
     private User user;
 
-    // Constructor
+    
     public Expense() {
         this.date = LocalDate.now();
         this.paymentMethod = "Default";
     }
 
-    // Added for monthly statistics
+    
     public String getMonth() {
         if (date != null) {
             return date.getMonth().toString() + " " + date.getYear();
