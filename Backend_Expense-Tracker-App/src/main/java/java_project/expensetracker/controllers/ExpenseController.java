@@ -1,3 +1,4 @@
+//Shivsrijit Verma
 package java_project.expensetracker.controllers;
 
 import java_project.expensetracker.model.Expense;
@@ -26,7 +27,7 @@ public class ExpenseController {
     @GetMapping("/")
     public String showDashboard(Model model) {
         try {
-            // Get current month's data
+            
             LocalDate startOfMonth = YearMonth.now().atDay(1);
             LocalDate endOfMonth = YearMonth.now().atEndOfMonth();
             
@@ -34,7 +35,7 @@ public class ExpenseController {
             Double monthlyTotal = expenseRepository.findTotalExpensesBetween(startOfMonth, endOfMonth);
             List<Object[]> categoryTotals = expenseRepository.findTotalsByCategory();
             
-            // Initialize new expense with default values
+        
             Expense newExpense = new Expense();
             newExpense.setDate(LocalDate.now());
             newExpense.setPaymentMethod("Default");
@@ -96,7 +97,7 @@ public class ExpenseController {
             List<Object[]> categoryTotals = expenseRepository.findTotalsByCategory();
             Map<String, Double> categoryMap = convertToMap(categoryTotals);
             
-            // Calculate percentages
+            
             Map<String, Double> categoryPercentages = new HashMap<>();
             if (monthlyTotal != null && monthlyTotal > 0) {
                 categoryMap.forEach((category, amount) -> 
