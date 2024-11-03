@@ -1,6 +1,7 @@
 # Expense-Tracker-App
 Project Description:
-This project is designed to help users track their expenses on a daily, monthly, and yearly basis. Key features include categorizing expenses by purpose, such as transportation, food, and more. Additionally, users can visualize spending patterns through pie charts, displaying expenses as percentages for easy analysis. All data is securely stored in an H2 database.
+This project is designed to help users track their expenses on a daily, monthly, and yearly basis. Key features include categorizing expenses by purpose, such as transportation, food, and more. 
+Additionally, users can visualize spending patterns through pie charts, displaying expenses as percentages for easy analysis. All data is securely stored in an H2 database.
 
 
 Submission for CIA-2 for Object Oriented Programming, Semester 3, 2023-27 batch.
