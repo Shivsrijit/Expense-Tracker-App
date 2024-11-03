@@ -1,257 +1,236 @@
-/* Modern Expense Tracker Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;700&display=swap');
 
-/* General Styles */
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #f8f9fa;
+    background: #E6E6FA; /* Light lavender background */
+    color: #001524; /* Almost black text */
     font-family: 'Poppins', sans-serif;
-    color: #2c3e50;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
-    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.9); /* Almost white with transparency */
+    border-radius: 15px;
     padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
 }
 
-/* Header Styles */
+/* Header */
+header {
+    background: #2E4057; /* Darker blue */
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: #FFFFFF; /* Pure white */
+}
+
 header h1 {
-    color: #2c3e50;
-    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-.lead {
-    font-size: 1.1rem;
-    color: #6c757d;
+/* Greeting */
+.greeting {
+    font-size: 2.5rem;
+    margin: 30px 0;
+    text-align: center;
+    color: #2E4057; /* Darker blue */
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
 }
 
 /* Summary Cards */
 .summary-card {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-    display: flex;
-    align-items: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.summary-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.summary-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-}
-
-.summary-icon i {
-    font-size: 1.5rem;
-    color: white;
-}
-
-.total-card .summary-icon {
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-}
-
-.category-card .summary-icon {
-    background: linear-gradient(135deg, #2196F3, #1976D2);
-}
-
-.recent-card .summary-icon {
-    background: linear-gradient(135deg, #FF9800, #F57C00);
-}
-
-.summary-info h3 {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    color: #6c757d;
-}
-
-.summary-info .amount {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
-    color: #2c3e50;
-}
-
-/* Card Styles */
-.card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-    margin-bottom: 2rem;
-}
-
-.card-title {
-    color: #2c3e50;
-    font-weight: 600;
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-}
-
-/* Form Styles */
-.form-floating > .form-control,
-.form-floating > .form-select {
-    border: 2px solid #e9ecef;
     border-radius: 10px;
-    height: calc(3.5rem + 2px);
-    line-height: 1.25;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF; /* Pure white */
 }
 
-.form-floating > .form-control:focus,
-.form-floating > .form-select:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
-}
+.total-card { background: #2E4057; } /* Darker blue */
+.category-card { background: #66101F; } /* Darker red */
+.recent-card { background: #1A2639; } /* Very dark blue */
 
-.form-floating > label {
-    padding: 1rem 0.75rem;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-    border: none;
+/* Expense Form */
+.expense-form {
+    background: #FFFFFF; /* Pure white */
     border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-control, .form-select {
+    background: #F0F0F0; /* Light gray */
+    border: 1px solid #2E4057;
+    color: #001524;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #2E4057;
+    box-shadow: 0 0 5px rgba(46, 64, 87, 0.5);
+}
+
+/* Labels */
+.form-label {
+    color: #2E4057;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 0.8rem 1.5rem;
-    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.expenses-list {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    color: #001524;
+}
+
+.table th {
+    background: #2E4057;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.category-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #FFFFFF;
+}
+
+.category-food { background: #66101F; }
+.category-transport { background: #2E4057; }
+.category-entertainment { background: #1A2639; }
+.category-bills { background: #66101F; }
+.category-other { background: #2E4057; }
+
+/* Buttons */
+.btn-primary {
+    background: #2E4057;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #45a049, #3d8b40);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+    background: #1A2639;
 }
 
-/* Table Styles */
-.table {
-    margin-bottom: 0;
-}
-
-.table thead th {
-    background-color: #f8f9fa;
-    border-bottom: 2px solid #e9ecef;
-    color: #6c757d;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-.table td {
-    vertical-align: middle;
-    padding: 1rem 0.75rem;
-    color: #2c3e50;
-}
-
-/* Category Badges */
-.category-badge {
-    padding: 0.35rem 0.75rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.category-food {
-    background-color: #e3f2fd;
-    color: #1976D2;
-}
-
-.category-transport {
-    background-color: #f3e5f5;
-    color: #7B1FA2;
-}
-
-.category-entertainment {
-    background-color: #e8f5e9;
-    color: #388E3C;
-}
-
-.category-bills {
-    background-color: #fff3e0;
-    color: #F57C00;
-}
-
-.category-other {
-    background-color: #f5f5f5;
-    color: #616161;
-}
-
-/* Delete Button */
 .delete-btn {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border: 1px solid #dc3545;
-    color: #dc3545;
-    transition: all 0.2s ease;
+    color: #FFFFFF;
+    background: #66101F;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 .delete-btn:hover {
-    background-color: #dc3545;
-    color: white;
+    background: #4A0B16;
 }
 
-/* Amount Display */
-.amount {
-    font-family: 'Poppins', monospace;
-    font-weight: 600;
+/* Card Titles */
+.card-title {
+    color: #2E4057;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-/* Empty State */
-.text-center.py-5 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 0;
+/* Statistics Page Styles */
+.statistics-container {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.text-center.py-5 i {
-    color: #dee2e6;
-    margin-bottom: 1rem;
+.chart-container {
+    background: #F0F0F0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
-/* Responsive Adjustments */
+.chart-title {
+    color: #2E4057;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Copyright Notice */
+.copyright {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+}
+
+
 @media (max-width: 768px) {
-    .summary-card {
-        margin-bottom: 1rem;
+    .summary-card, .expense-form, .expenses-list, .statistics-container {
+        margin-bottom: 15px;
     }
-    
-    .btn-primary {
-        width: 100%;
-        margin-top: 1rem;
-    }
-    
-    .table-responsive {
-        border-radius: 15px;
+    .greeting {
+        font-size: 2rem;
     }
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.back-to-dashboard {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2E4057;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card {
-    animation: fadeIn 0.5s ease-out;
+.back-to-dashboard:hover {
+    background-color: #1A2639;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-dashboard i {
+    margin-right: 8px;
+}
+.copyright {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
 }
