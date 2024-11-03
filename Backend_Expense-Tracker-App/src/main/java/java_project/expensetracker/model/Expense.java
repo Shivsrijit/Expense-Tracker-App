@@ -26,7 +26,6 @@ public class Expense {
     @NotNull
     private String category;
 
-    @NotNull
     private String paymentMethod;
 
     private String notes;
@@ -34,6 +33,12 @@ public class Expense {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    // Constructor
+    public Expense() {
+        this.date = LocalDate.now();
+        this.paymentMethod = "Default";
+    }
 
     // Added for monthly statistics
     public String getMonth() {
