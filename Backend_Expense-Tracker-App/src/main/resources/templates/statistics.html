@@ -22,7 +22,7 @@
                     <div class="stat-card">
                         <i class="fas fa-wallet fa-2x text-primary"></i>
                         <h4>Monthly Total</h4>
-                        <div class="stat-value" th:text="${'$' + #numbers.formatDecimal(monthlyTotal, 1, 2)}">$0.00</div>
+                        <div class="stat-value" th:text="${'INR ' + #numbers.formatDecimal(monthlyTotal, 1, 2)}">$0.00</div>
                         <p class="text-muted">Total expenses this month</p>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     <div class="stat-card">
                         <i class="fas fa-chart-pie fa-2x text-warning"></i>
                         <h4>Average Per Category</h4>
-                        <div class="stat-value" th:text="${'$' + #numbers.formatDecimal(monthlyTotal / (#maps.size(categoryTotals) ?: 1), 1, 2)}">$0.00</div>
+                        <div class="stat-value" th:text="${'INR ' + #numbers.formatDecimal(monthlyTotal / (#maps.size(categoryTotals) ?: 1), 1, 2)}">$0.00</div>
                         <p class="text-muted">Average spending per category</p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                                         <i class="fas fa-tag me-2"></i>
                                         <span th:text="${category.key}">Category</span>
                                     </td>
-                                    <td th:text="${'$' + #numbers.formatDecimal(category.value, 1, 2)}">$0.00</td>
+                                    <td th:text="${'INR ' + #numbers.formatDecimal(category.value, 1, 2)}">$0.00</td>
                                     <td>
                                         <div class="progress" style="height: 20px;">
                                             <div class="progress-bar" role="progressbar"
