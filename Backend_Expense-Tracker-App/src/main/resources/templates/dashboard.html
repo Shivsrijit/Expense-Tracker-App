@@ -14,7 +14,7 @@
         </header>
 
         <div class="greeting">
-            <h2>Welcome, User!</h2>
+            <h2>Welcome, Shiv!</h2>
         </div>
 
         <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="summary-info">
                         <h3>Total Expenses</h3>
-                        <p class="amount" th:text="${'$' + #numbers.formatDecimal(monthlyTotal, 0, 'COMMA', 2, 'POINT')}">$0.00</p>
+                        <p class="amount" th:text="${'INR ' + #numbers.formatDecimal(monthlyTotal, 0, 'COMMA', 2, 'POINT')}">$0.00</p>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                                     <span th:class="${'category-badge category-' + #strings.toLowerCase(expense.category)}"
                                           th:text="${expense.category}">Category</span>
                                 </td>
-                                <td class="amount" th:text="${'$' + #numbers.formatDecimal(expense.amount, 0, 'COMMA', 2, 'POINT')}">Amount</td>
+                                <td class="amount" th:text="${'INR ' + #numbers.formatDecimal(expense.amount, 0, 'COMMA', 2, 'POINT')}">Amount</td>
                                 <td>
                                     <a th:href="@{/expense/delete/{id}(id=${expense.id})}" 
                                         class="btn delete-btn"
