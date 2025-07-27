@@ -4,8 +4,6 @@ This project is designed to help users track their expenses on a daily, monthly,
 Additionally, users can visualize spending patterns through pie charts, displaying expenses as percentages for easy analysis. All data is securely stored in an H2 database.
 
 
-Submission for CIA-2 for Object Oriented Programming, Semester 3, 2023-27 batch.
-
 ## Team Members
 - Shivsrijit Verma - 23011101134
 - Somasekhara S - 23011101124
